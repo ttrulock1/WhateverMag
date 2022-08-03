@@ -4,13 +4,23 @@ const fileupload = require('express-fileupload');
 
 let initial_path = path.join(__dirname, "public");
 
+// const app = initializeApp(firebaseConfig);
+
+
 const app = express();
 app.use(express.static(initial_path));
 app.use(fileupload());
 
+
 // change to "index.html" in first update
+
 app.get('/', (req, res) => {
     res.sendFile(path.join(initial_path,"home.html"));
+})
+
+
+app.get('/blog', (req, res) => {
+    res.sendFile(path.join(initial_path,"home1.html"));
 })
 
 app.get('/editor', (req, res) => {
@@ -48,3 +58,5 @@ app.use((req, res) => {
 app.listen("3000", () => {
     console.log('listening to the wind motherfucker.');
 })
+
+

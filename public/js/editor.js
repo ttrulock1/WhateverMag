@@ -3,7 +3,7 @@
 // may need to change db.collection on line 74 "blogs" to whateverMag
 
 const blogTitleField = document.querySelector('.title');
-// article field is missspleed check where that is going.
+// article field is misspelled check where that is going.
 const articleField = document.querySelector('.article');
 
 // banner
