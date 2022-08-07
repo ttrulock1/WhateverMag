@@ -2,6 +2,14 @@
 
 // may need to change db.collection on line 74 "blogs" to whateverMag
 
+// added this to try and direct the article. 
+// it is either going to look something like this 
+// or with every option having it's own indivdual variable. ex. const Headline= document.querySelector("#Headline")
+// let articleposition = document.querySelector("#locationOfArticle")
+
+
+
+
 const blogTitleField = document.querySelector('.title');
 // article field is misspelled check where that is going.
 const articleField = document.querySelector('.article');
@@ -21,6 +29,8 @@ bannerImage.addEventListener('change', () => {
 uploadInput.addEventListener('change', () => {
     uploadImage(uploadInput, "image");
 })
+
+
 
 // upload image function.
 
@@ -65,6 +75,13 @@ publishBtn.addEventListener('click', () => {
             id += letters[Math.floor(Math.random() * letters.length)];
         }
 
+        // shit I added to setup position. This is the stack overflow answer;
+
+        const brandOfCar = document.querySelector(".custom-select > select");
+        
+
+
+
         // setting up docName
         let docName = `${blogTitle}-${id}`;
         let date = new Date(); // for published at info
@@ -73,6 +90,8 @@ publishBtn.addEventListener('click', () => {
         db.collection("blogs").doc(docName).set({
             title: blogTitleField.value,
             article: articleField.value,
+            // I'm additing the result the database
+            position: brandOfCar.value,
             bannerImage: bannerPath,
             publishedAt: `${date.getDate()} ${months[date.getMonth()]} ${date.getFullYear()}`
         })
@@ -84,3 +103,118 @@ publishBtn.addEventListener('click', () => {
         })
     }
 })
+
+
+
+
+// My attempts here are to direct the articles to the right direction. 
+// Here we are creating a drop down menu to select the articles position.
+
+const headline= document.querySelector('#Headline')
+const secondLead= document.querySelector("#secondLead")
+
+
+
+
+
+
+
+
+
+var x, i, j, l, ll, selElmnt, a, b, c;
+/*look for any elements with the class "custom-select":*/
+x = document.getElementsByClassName("custom-select");
+l = x.length;
+for (i = 0; i < l; i++) {
+  selElmnt = x[i].getElementsByTagName("select")[0];
+  ll = selElmnt.length;
+
+  /*for each element, create a new DIV that will contain the option list:*/
+  b = document.createElement("DIV");
+  b.setAttribute("class", "select-items select-hide");
+  for (j = 1; j < ll; j++) {
+    /*for each option in the original select element,
+    create a new DIV that will act as an option item:*/
+    c = document.createElement("DIV");
+    c.innerHTML = selElmnt.options[j].innerHTML;
+    c.addEventListener("click", function(e) {
+        /*when an item is clicked, update the original select box,
+        and the selected item:*/
+        var y, i, k, s, h, sl, yl;
+        s = this.parentNode.parentNode.getElementsByTagName("select")[0];
+        sl = s.length;
+        h = this.parentNode.previousSibling;
+        for (i = 0; i < sl; i++) {
+          if (s.options[i].innerHTML == this.innerHTML) {
+            s.selectedIndex = i;
+            h.innerHTML = this.innerHTML;
+            y = this.parentNode.getElementsByClassName("same-as-selected");
+            yl = y.length;
+            for (k = 0; k < yl; k++) {
+              y[k].removeAttribute("class");
+            }
+            this.setAttribute("class", "same-as-selected");
+            break;
+          }
+        }
+        h.click();
+    });
+    b.appendChild(c);
+  }
+  x[i].appendChild(b);
+  a.addEventListener("click", function(e) {
+      /*when the select box is clicked, close any other select boxes,
+      and open/close the current select box:*/
+      e.stopPropagation();
+      closeAllSelect(this);
+      this.nextSibling.classList.toggle("select-hide");
+      this.classList.toggle("select-arrow-active");
+    });
+}
+function closeAllSelect(elmnt) {
+  /*a function that will close all select boxes in the document,
+  except the current select box:*/
+  var x, y, i, xl, yl, arrNo = [];
+  x = document.getElementsByClassName("select-items");
+  y = document.getElementsByClassName("select-selected");
+  xl = x.length;
+  yl = y.length;
+  for (i = 0; i < yl; i++) {
+    if (elmnt == y[i]) {
+      arrNo.push(i)
+    } else {
+      y[i].classList.remove("select-arrow-active");
+    }
+  }
+  for (i = 0; i < xl; i++) {
+    if (arrNo.indexOf(i)) {
+      x[i].classList.add("select-hide");
+    }
+  }
+}
+/*if the user clicks anywhere outside the select box,
+then close all select boxes:*/
+document.addEventListener("click", closeAllSelect);
+
+// const testBtn = document.getElementsByClassName("test");
+
+// var brandOfCar= document.getElementsByClassName("custom-select");
+
+// testBtn.addEventListener("click",(console.log(brandOfCar.value)
+//  ));
+
+// const testBtn = document.getElementsByClassName('test')[0];
+
+// I put this code in the above function
+
+
+// const testBtn = document.querySelector('.test');
+
+// const brandOfCar = document.querySelector(".custom-select > select");
+
+// document.onload = () => {
+// testBtn.addEventListener("click", (event) => {
+//     console.log(brandOfCar.value)
+//     // here you can also call some function that will store the value
+// });
+// }
