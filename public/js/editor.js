@@ -1,14 +1,5 @@
 // Same as source code except for note on line 5, changed multiple places 7 total changes of articleFeild to articleField
 
-// may need to change db.collection on line 74 "blogs" to whateverMag
-
-// added this to try and direct the article. 
-// it is either going to look something like this 
-// or with every option having it's own indivdual variable. ex. const Headline= document.querySelector("#Headline")
-// let articleposition = document.querySelector("#locationOfArticle")
-
-
-
 
 const blogTitleField = document.querySelector('.title');
 // article field is misspelled check where that is going.
@@ -29,8 +20,6 @@ bannerImage.addEventListener('change', () => {
 uploadInput.addEventListener('change', () => {
     uploadImage(uploadInput, "image");
 })
-
-
 
 // upload image function.
 
@@ -105,19 +94,11 @@ publishBtn.addEventListener('click', () => {
 })
 
 
-
-
 // My attempts here are to direct the articles to the right direction. 
 // Here we are creating a drop down menu to select the articles position.
 
 const headline= document.querySelector('#Headline')
 const secondLead= document.querySelector("#secondLead")
-
-
-
-
-
-
 
 
 
@@ -196,25 +177,3 @@ function closeAllSelect(elmnt) {
 then close all select boxes:*/
 document.addEventListener("click", closeAllSelect);
 
-// const testBtn = document.getElementsByClassName("test");
-
-// var brandOfCar= document.getElementsByClassName("custom-select");
-
-// testBtn.addEventListener("click",(console.log(brandOfCar.value)
-//  ));
-
-// const testBtn = document.getElementsByClassName('test')[0];
-
-// I put this code in the above function
-
-
-// const testBtn = document.querySelector('.test');
-
-// const brandOfCar = document.querySelector(".custom-select > select");
-
-// document.onload = () => {
-// testBtn.addEventListener("click", (event) => {
-//     console.log(brandOfCar.value)
-//     // here you can also call some function that will store the value
-// });
-// }

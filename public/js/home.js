@@ -1,13 +1,40 @@
 // everything checks out below exact same
 
-const test = document.querySelector('.test');
-const title = document.querySelector('.test1');
-const Headline1= document.querySelector('.Headline1');
-const Headline2= document.querySelector('.headline hl5')
+
+
+
+// This is HEADLINE 1
+const title1 = document.querySelector('.headlinehl3')
+const text1 = document.querySelector('.text1')
+// this is the second heromine
+const title2= document.querySelector('.headlinehl5')
 const text2 = document.querySelector('.text2')
+// This is the Third Headline Luke
+const title3= document.querySelector('.headlinehl1');
+const text3= document.querySelector('.text3');
+
+// This is the Fourth Headline Luke
+const title4= document.querySelector('.headlinehl4');
+const text4= document.querySelector('.text4');
+
+
+
+// This is the Third Headline Luke
+const title5= document.querySelector('.headlinehl6');
+const text5= document.querySelector('.text5');
+
+
+
+const smallArticleTitle1=document.querySelector('#smallArticleTitle1');
+const smallArticleText1=document.querySelector('#smallArticleText1');
+
+
+const smallArticleTitle4=document.querySelector('#smallArticleTitle4');
+const smallArticleText4=document.querySelector('#smallArticleText4');
 
 const blogSection = document.querySelector('.blogs-section');
 
+// make enter button aslo create a new paragraph. 
 
 db.collection("blogs").get().then((blogs) => {
     blogs.forEach(blog => {
@@ -17,84 +44,26 @@ db.collection("blogs").get().then((blogs) => {
     })
 }) 
 
-// const titleInsert = (blog) => {
-//     let data = blog.data();
-//     // test.innerHTML += ` fucker
-//     // <div class="blog-card">
-//     //     <h1 class="blog-title">${data.title.substring(0, 100) + '...'}</h1>
-//     //     <p class="blog-overview">${data.article.substring(0, 200) + '...'}</p>
-
-//     // </div>
-//     // `;
-//     text2.innerHTML += `
-//     <p class="text2"><span class= "head">${data.article.substring() + '...'} </span class></p>
-//     `;
-
-//     text2.innerHTML=`
-//     <p class="text2">${data.article.publishedAt}</p>`
-// }
-
-// const textInsert = (blog) => {
-//     let data = blog.data();
-//     Headline1.innerHTML += ` fucker
-//     <div class="blog-card">
-//         <p class="blog-overview">${data.article.substring(0, 200) + '...'}</p>
-
-//     </div>
-//     `;
-//     text2.innerHTML += `
-//     <p class="blog-overview">${data.article.substring(0, 200) + '...'}</p>
-//     `;
-
-//     if (this.data.position = 1){
-//         Headline1.innerHTML += `
-//         <p>i have done it shitere aefadf adwfka;dfaefkwefniccasdf</p>
-//         <div class="blog-card">
-//              <h1 class="blog-title">${this.data.title.substring(0, 100) + '...'}</h1>
-//              <p class="blog-overview">${this.data.article.substring(0, 200) + '...'}</p>
-//         </div>
-//         `;
-//         }
-
-// }
-
-// const Headline2 = (blog) => {
-//     let data = blog.data();    
-//     if (data.position = 1){
-//     Headline1.innerHTML += `
-//     <p>i have done it shitere aefadf adwfka;dfaefkwefniccasdf</p>
-//     <div class="blog-card">
-//          <h1 class="blog-title">${this.data.title.substring(0, 100) + '...'}</h1>
-//          <p class="blog-overview">${this.data.article.substring(0, 200) + '...'}</p>
-//     </div>
-//     `;
-//     }
-// }
-//
-
-// below is a hypothetical function that will allow me to position the articles in the right spot. Beyond this, it supposedly replaces the previous the article with most recently update article 
-
-
 
 const titleInsert = (blog) => {
     let data= blog.data();
     let clonedData = {...data};
+    // let clonedTitle = clonedData.sort((a, b) => a.date - b.date);
 
-//     let correctArticle = blog.sort((a, b) => a.blogDate - b.blogDate)
-    // const sortedActivities = data.sort((a, b) => b.date - a.date)
     // this would switch data on the line below to correct aritlce
+    // now below i used bottom article inside of bottom artilce thats doing the same line thing so I need to copy bottom article everything except the borders style rename that bottomarticle1 then update everything
 
     let {article, bannerImage, position, date, title} = data;
-
-  
+        
+        console.log(clonedData);
 
     if(position=== "0"){
     
-        text2.innerHTML += `
-        <p class="text2"><span class= "head">${title} </span class></p>
+        title1.innerHTML += `
+        <p class="headline hl1"><span class= "head">${title} </span class></p>
         `    
-        text2.innerHTML += `
-        <p class="text1"><span class= "head"> fdddfasd${article} </span class></p>
+        text1.innerHTML += `
+        <p class="text1"><span class= "head"> ${article} </span class></p>
         `
         // ${correctArticle.image}
 
@@ -102,30 +71,172 @@ const titleInsert = (blog) => {
         console.log(article)
     }
 
-
-
-
       else if  (position==="1"){
-        // text2.innerHTML += `
-        // <p class="text2"><span class= "head">${article} </span class></p>
-        // `
-        // text2.innerHTML += `
-        // <p class="text2"><span class= "head">${title} </span class></p>
-        // `
-        // // ${correctArticle.image}
+        title2.innerHTML += `
+        <p class="headline hl5"><span class= "head">${title} </span class></p>
+        `    
+        text2.innerHTML += `
+        <p>${article}</p>
+        `
+        // ${correctArticle.image}
 
-        // console.log(title)
+        console.log(position);
+        console.log(article)
     }
 
+    else if  (position==="2"){
+        text3.innerHTML += `
+        <p class="">${article.substring(0, 750) } </p>
+        `
+        title3.innerHTML += `
+        <p><span class= "headline hl2">${title} </span class></p>
+        `
+        // ${correctArticle.image}
+
+        console.log(title)
+    }
+
+    else if  (position==="3"){
+        title4.innerHTML += `
+        <p class="headline hl5"><span class= "head">${title} </span class></p>
+        `    
+        text4.innerHTML += `
+        <p>${article.substring(0, 1000)}</p>
+        `
+        // ${correctArticle.image}
+
+        console.log(position);
+        console.log(article)
+    }
+
+    
+
+
+    else if  (position==="4"){
+        title5.innerHTML += `
+        <p class="headline hl5"><span class= "head">${title} </span class></p>
+        `    
+        text5.innerHTML += `
+        <p>${article.substring(0, 500)}}</p>
+        `
+        // ${correctArticle.image}
+
+        console.log(position);
+        console.log(article)
+    }
+    else if (position==="5"){
+      
+        console.log(position, title);
+                smallArticleTitle1.innerHTML += `
+                <p> ${title} </p>
+                `
+                smallArticleText1.innerHTML += `
+                <p>${article.substring(0, 240)}</p>
+                `
+        
+                
+                // ${correctArticle.image}
+        
+                console.log(position)
+            }
+
+    
+
+    else if (position==="6"){
+      
+        console.log(position, title);
+                smallArticleTitle2.innerHTML += `
+                <p>${title}</p>
+                `
+                smallArticleText2.innerHTML += `
+                <p> ${article.substring(0, 240)}} </p>
+                `
+        
+                
+                // ${correctArticle.image}
+        
+                console.log(position)
+            }
+        
+   else if (position==="7"){
+      
+        console.log(position, title);
+                smallArticleTitle3.innerHTML += `
+                <p>${title} </p>
+                `
+                smallArticleText3.innerHTML += `
+                <p> ${article.substring(0, 240)}}</p>
+                `
+        
+                
+                // ${correctArticle.image}
+        
+                console.log(position)
+            }
+
+
+
+    else if (position==="8"){
+      
+        console.log(position, title);
+                smallArticleTitle4.innerHTML += `
+                <p>${title} </p>
+                `
+                smallArticleText4.innerHTML += `
+                <p> ${article.substring(0, 240)}} </p>
+                `
+        
+                
+                // ${correctArticle.image}
+        
+                console.log(position)
+            }
+        
+
+
+
+    else if (position==="8"){
+      
+        console.log(position, title);
+                smallArticleTitle4.innerHTML += `
+                <p>${title}</p>
+                `
+                smallArticleText4.innerHTML += `
+                <p> ${article.substring(0, 240)} (click to continue reading) </p>
+                `
+        
+                
+                // ${correctArticle.image}
+        
+                console.log(position)
+            }
+        
+
+
+    else if (position==="9"){
+      
+        console.log(position, title);
+                smallArticleTitle5.innerHTML += `
+                <p>${title}</p>
+                `
+                smallArticleText5.innerHTML += `
+                <p> ${article.substring(0,240)}</p>
+                `
+        
+                
+                // ${correctArticle.image}
+        
+                console.log(position)
+            }
 
      else if (position==="10"){
       
 console.log(position, title);
         smallArticleTitle6.innerHTML += `
-        <p class="text2"><span class= "head">title: ${title} </span class></p>
+        <p>${title} </p>
         `
         smallArticleText6.innerHTML += `
-        <p class="text2"><span class= "head"> article: ${article} </span class></p>
+        <p> ${article} </p>
         `
 
         
@@ -135,6 +246,7 @@ console.log(position, title);
     }
 
 
+    
     else {return null}
 //     if(position=1){
 //         headlinehl3.innerHTML += `
