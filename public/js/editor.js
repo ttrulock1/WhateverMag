@@ -77,7 +77,7 @@ publishBtn.addEventListener('click', () => {
 
         // shit I added to setup position. This is the stack overflow answer;
 
-        const brandOfCar = document.querySelector(".custom-select > select");
+        const positionOfArticle = document.querySelector(".custom-select > select");
         
 
 
@@ -91,7 +91,7 @@ publishBtn.addEventListener('click', () => {
             title: blogTitleField.value,
             article: articleField.value,
             // I'm additing the result the database
-            position: brandOfCar.value,
+            position: positionOfArticle.value,
             bannerImage: bannerPath,
             publishedAt: `${date.getDate()} ${months[date.getMonth()]} ${date.getFullYear()}`
         })

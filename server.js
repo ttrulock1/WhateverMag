@@ -13,15 +13,16 @@ app.use(fileupload());
 
 
 // change to "index.html" in first update
+app.get('/home1', (req, res) => {
+    res.sendFile(path.join(initial_path, "home1.html"));
+})
 
 app.get('/', (req, res) => {
     res.sendFile(path.join(initial_path,"home.html"));
 })
 
 
-app.get('/blog', (req, res) => {
-    res.sendFile(path.join(initial_path,"home1.html"));
-})
+
 
 app.get('/editor', (req, res) => {
     res.sendFile(path.join(initial_path, "editor.html"));
