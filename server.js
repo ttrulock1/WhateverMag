@@ -14,7 +14,7 @@ app.use(fileupload());
 
 // change to "index.html" in first update
 app.get('/home1', (req, res) => {
-    res.sendFile(path.join(initial_path, "home1.html"));
+    res.sendFile(path.join(initial_path, "blog.html"));
 })
 
 app.get('/', (req, res) => {
@@ -56,8 +56,7 @@ app.use((req, res) => {
     res.json("404");
 })
 
-app.listen("3000", () => {
-    console.log('listening to the wind motherfucker.');
-})
-
-
+var port = process.env.PORT || 3000;
+app.listen(port, "0.0.0.0", function() {
+console.log("Listening on Port 3000");
+});

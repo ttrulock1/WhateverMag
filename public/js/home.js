@@ -1,8 +1,5 @@
 // everything checks out below exact same
 
-
-
-
 // This is HEADLINE 1
 const title1 = document.querySelector('.headlinehl3')
 const text1 = document.querySelector('.text1')
@@ -43,20 +40,28 @@ db.collection("blogs").get().then((blogs) => {
         }
     })
 }) 
+// Altogether
 
 
-const titleInsert = (blog) => {
-    let data= blog.data();
+
+
+
+const titleInsert = (blogs) => {
+    let data= blogs.data();
     let clonedData = {...data};
-    // let clonedTitle = clonedData.sort((a, b) => a.date - b.date);
 
+
+
+ 
     // this would switch data on the line below to correct aritlce
     // now below i used bottom article inside of bottom artilce thats doing the same line thing so I need to copy bottom article everything except the borders style rename that bottomarticle1 then update everything
 
     let {article, bannerImage, position, date, title} = data;
         
-        console.log(clonedData);
 
+
+
+ 
     if(position=== "0"){
     
         title1.innerHTML += `
@@ -301,3 +306,7 @@ console.log(position, title);
 // }
 
 // console.log(processNewTransaction(order2, newTransAmount2))
+
+
+
+
