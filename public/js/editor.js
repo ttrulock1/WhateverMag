@@ -57,6 +57,7 @@ let months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oc
 publishBtn.addEventListener('click', () => {
     if(articleField.value.length && blogTitleField.value.length){
         // generating id
+        // need to add a way to do paragraph breaks.
         let letters = 'abcdefghijklmnopqrstuvwxyz';
         let blogTitle = blogTitleField.value.split(" ").join("-");
         let id = '';
@@ -68,21 +69,31 @@ publishBtn.addEventListener('click', () => {
 
         const positionOfArticle = document.querySelector(".custom-select > select");
         
-
-
-
         // setting up docName
+        // delete the id then i can stringify the blog title and reference it.
         let docName = `${blogTitle}-${id}`;
         let date = new Date(); // for published at info
 
-        //access firstore with db variable;
+        //access firestore with db variable;
         db.collection("blogs").doc(docName).set({
             title: blogTitleField.value,
             article: articleField.value,
-            // I'm additing the result the database
+            // I'm additing the position result the database
+            // I'm adding an article ID that auto increments
+            // I'm adding a hyperlink system which works with the database.
+            // citation, secondarytext y or n, secondarytext, USER_ID;
+            // need to fix the 
+            // article_ID: Find that ascending value,
+            // User_ID: 
+            // Subtile: boolean;
+            // subtitletext: subtitleField.value;
+            // citation:citationField.value,
             position: positionOfArticle.value,
             bannerImage: bannerPath,
-            publishedAt: `${date.getDate()} ${months[date.getMonth()]} ${date.getFullYear()}`
+            publishedAt: `${date.getDate()} ${months[date.getMonth()]} ${date.getFullYear()}`,
+            linkURL: `/${docName}`,
+            article_ID: 3,
+
         })
         .then(() => {
             location.href = `/${docName}`;

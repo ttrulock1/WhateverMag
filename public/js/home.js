@@ -13,6 +13,10 @@ const text3= document.querySelector('.text3');
 // This is the Fourth Headline Luke
 const title4= document.querySelector('.headlinehl4');
 const text4= document.querySelector('.text4');
+const link = document.querySelector('.headlinehl4','.text4');
+
+// trying to add hyper links
+const blogSection = document.querySelector('.headlinehl4','.text4');
 
 
 
@@ -29,7 +33,7 @@ const smallArticleText1=document.querySelector('#smallArticleText1');
 const smallArticleTitle4=document.querySelector('#smallArticleTitle4');
 const smallArticleText4=document.querySelector('#smallArticleText4');
 
-const blogSection = document.querySelector('.blogs-section');
+// const blogSection = document.querySelector('.blogs-section');
 
 // make enter button aslo create a new paragraph. 
 
@@ -58,7 +62,7 @@ const titleInsert = (blogs) => {
 
     let {article, bannerImage, position, date, title} = data;
         
-
+    console.log(clonedData.title)
 
 
  
@@ -73,7 +77,8 @@ const titleInsert = (blogs) => {
         // ${correctArticle.image}
 
         console.log(position);
-        console.log(article)
+        console.log(article);
+        console.log(bannerImage)
     }
 
       else if  (position==="1"){
@@ -105,13 +110,45 @@ const titleInsert = (blogs) => {
         title4.innerHTML += `
         <p class="headline hl5"><span class= "head">${title} </span class></p>
         `    
+        console.log(article)
+
+        // below is the beginging of the final code
+        // if (secondaryHeadline = 0) return{
+        //     pop up secondary heading box
+        //     text of headline
+        // }
+        // enter lines about a citatation, and caption
+         // if (quote = 0) return{
+        //     pop up quote box
+        //     text of quote
+        // }
+
+        // add image or not. Remember adding an image is not nessary but can be fucking great.
+        // if (Img uploaded = true) return{
+        //     pop up caption (enter caption)
+        //     text of headline
+        // }
+
         text4.innerHTML += `
         <p>${article.substring(0, 1000)}</p>
+
+        <a href="/${data.linkURL}" class="btn dark">read</a>
         `
+        const createBlog = (blog) => {
+        blogSection.innerHTML += `
+        `
+
+        }
+        createBlog();
+
         // ${correctArticle.image}
 
         console.log(position);
         console.log(article)
+// 
+
+
+
     }
 
     
@@ -277,35 +314,6 @@ console.log(position, title);
 
 
 };
-
-//
-
-
-// function processNewTransaction(orderObject, newTransAmount) {
-//   let clonedCharges = [...orderObject.charges];
-//   // 1. Apply existing refunds to charges.
-//   orderObject.refunds.forEach(({charge_id, amount}) => {
-//     clonedCharges.find(({id}) => id === charge_id).amount += amount;
-//   })
-//   // 2. Sort remaining values in charges by amount ascending.
-//   clonedCharges = clonedCharges.sort((a, b) => a.amount - b.amount)
-//   // 3. Apply remaining credit iteratively to sorted charges, creating refunds with corresponding charge IDs.
-//   let remainingTransAmount = 0 - newTransAmount;
-//   for (let i = 0; i < clonedCharges.length && remainingTransAmount > 0; i++) {
-//     const charge = clonedCharges[i];
-//     const amountAppliedToCharge = Math.min(charge.amount, remainingTransAmount)
-//     if (amountAppliedToCharge > 0) {
-//       remainingTransAmount -= amountAppliedToCharge;
-//       orderObject.refunds.push({
-//         charge_id: charge.id,
-//         amount: 0 - amountAppliedToCharge
-//       })
-//     }
-//   }
-//   return orderObject;
-// }
-
-// console.log(processNewTransaction(order2, newTransAmount2))
 
 
 
