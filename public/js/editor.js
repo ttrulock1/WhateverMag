@@ -2,9 +2,11 @@
 
 
 const blogTitleField = document.querySelector('.title');
+const citationField = document.querySelector('.citation');
+const subtitle = document.querySelector('.subtitle');
+// const secondaryHeadline = document.querySelector('.Secondary-Headline');
 // article field is misspelled check where that is going.
 const articleField = document.querySelector('.article');
-
 // banner
 const bannerImage = document.querySelector('#banner-upload');
 const banner = document.querySelector(".banner");
@@ -68,6 +70,7 @@ publishBtn.addEventListener('click', () => {
         // shit I added to setup position. This is the stack overflow answer;
 
         const positionOfArticle = document.querySelector(".custom-select > select");
+        const subtitleyn = document.querySelector(".subtitleyn > select");
         
         // setting up docName
         // delete the id then i can stringify the blog title and reference it.
@@ -77,22 +80,23 @@ publishBtn.addEventListener('click', () => {
         //access firestore with db variable;
         db.collection("blogs").doc(docName).set({
             title: blogTitleField.value,
-            article: articleField.value,
+            article: articleField.value,            
+            bannerImage: bannerPath,
+            publishedAt: `${date.getDate()} ${months[date.getMonth()]} ${date.getFullYear()}`,
             // I'm additing the position result the database
             // I'm adding an article ID that auto increments
             // I'm adding a hyperlink system which works with the database.
             // citation, secondarytext y or n, secondarytext, USER_ID;
             // need to fix the 
             // article_ID: Find that ascending value,
-            // User_ID: 
-            // Subtile: boolean;
-            // subtitletext: subtitleField.value;
-            // citation:citationField.value,
+            // User_ID:
+            subtitleyn: subtitleyn.value,
+            subtitle: subtitle.value,
+            citation: citationField.value,
             position: positionOfArticle.value,
-            bannerImage: bannerPath,
-            publishedAt: `${date.getDate()} ${months[date.getMonth()]} ${date.getFullYear()}`,
+
             linkURL: `/${docName}`,
-            article_ID: 3,
+            article_ID: 5,
 
         })
         .then(() => {

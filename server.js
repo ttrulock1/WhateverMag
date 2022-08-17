@@ -28,7 +28,6 @@ app.get('/editor', (req, res) => {
     res.sendFile(path.join(initial_path, "editor.html"));
 })
 
-// upload link
 app.post('/upload', (req, res) => {
     let file = req.files.image;
     let date = new Date();

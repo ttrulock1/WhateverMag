@@ -3,8 +3,15 @@
 // This is HEADLINE 1
 const title1 = document.querySelector('.headlinehl3')
 const text1 = document.querySelector('.text1')
-// this is the second heromine
-const title2= document.querySelector('.headlinehl5')
+// const image0 = document.querySelector('.image0')
+
+
+
+const citation0 = document.querySelector('.citation0')
+const subtitle0 = document.querySelector('.subtitle0')
+
+// this is the second 
+const title2= document.querySelector('.title2')
 const text2 = document.querySelector('.text2')
 // This is the Third Headline Luke
 const title3= document.querySelector('.headlinehl1');
@@ -49,7 +56,6 @@ db.collection("blogs").get().then((blogs) => {
 
 
 
-
 const titleInsert = (blogs) => {
     let data= blogs.data();
     let clonedData = {...data};
@@ -76,6 +82,16 @@ const titleInsert = (blogs) => {
         `
         // ${correctArticle.image}
 
+        citation0.innerHTML += `
+        <p class="citation"><span class= "head"> ${data.citation} </span class></p>
+        `
+        subtitle0.innerHTML += `
+        <span class="headline hl2"> ${data.subtitle} </span> 
+        `
+        // image0.innerHTML += `
+        // <p class="image0"> <span.class= "head">${data.bannerImage}</span class></p>
+        // `
+
         console.log(position);
         console.log(article);
         console.log(bannerImage)
@@ -83,7 +99,7 @@ const titleInsert = (blogs) => {
 
       else if  (position==="1"){
         title2.innerHTML += `
-        <p class="headline hl5"><span class= "head">${title} </span class></p>
+        <p class="headline hl5">${title} </p>
         `    
         text2.innerHTML += `
         <p>${article}</p>

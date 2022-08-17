@@ -255,13 +255,13 @@ p{
     box-sizing: border-box;
     padding: 10px 0 10px 0;
 }
-.collumn .headline.hl6{
+.collumn .headline.hl6 .caption0{
     font-weight: 400;
     font-size: 18px;
     box-sizing: border-box;
     padding: 10px 0 10px 0;
 }
-.collumn .headline.hl6:before{
+.collumn .headline.hl6 .caption0:before{
     border-top: 1px solid #2f2f2f;
     content: '';
     width: 100px;
@@ -269,7 +269,7 @@ p{
     display: block;
     margin: 0 auto;
 }
-.collumn .headline.hl6:after{
+.collumn .headline.hl6 .caption0:after{
     border-bottom: 1px solid #2f2f2f;
     content: '';
     width: 100px;
