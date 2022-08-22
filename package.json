@@ -5,9 +5,8 @@
   "main": "server.js", 
 
   "scripts": {
-    "start": "nodemon --exec node server.js --src/server.js"
-
-
+    "start": "(cd password && npm run start) & nodemon --exec node server.js --src/server.js"
+    
   },
   "author": "",
   "license": "ISC",

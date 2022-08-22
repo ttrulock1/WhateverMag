@@ -94,6 +94,7 @@ publishBtn.addEventListener('click', () => {
             subtitle: subtitle.value,
             citation: citationField.value,
             position: positionOfArticle.value,
+            // author:
 
             linkURL: `/${docName}`,
             article_ID: 5,
