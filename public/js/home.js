@@ -40,6 +40,9 @@ const citation4 = document.querySelector('.citation4')
 const subtitle4 = document.querySelector('.subtitle4')
 // caption1= document.querySelectory('caption1')
 
+const text10 = document.querySelector('.text10')
+
+
 
 // This is the Fifth Headline (5)
 const title5= document.querySelector('.title5');
@@ -58,9 +61,9 @@ const text6= document.querySelector('.text6');
 // const image6 = document.querySelector('.image0')
 const citation6 = document.querySelector('.citation6')
 const subtitle6 = document.querySelector('.subtitle6')
-// caption1= document.querySelectory('caption1')
+// caption6= document.querySelectory('caption1')
 
-// This is the seventh Headline (6)
+// This is the seventh Headline (7)
 const title7= document.querySelector('.title7');
 const text7= document.querySelector('.text7');
 // const link7 = document.querySelector('.headlinehl4','.text7');
@@ -68,6 +71,16 @@ const text7= document.querySelector('.text7');
 const citation7 = document.querySelector('.citation7')
 const subtitle7 = document.querySelector('.subtitle7')
 // caption7= document.querySelectory('caption7')
+const text8 = document.querySelector('.text8')
+
+// This is the eigth Headline (8, use 9 because of the double coloumn in 7)
+const title9= document.querySelector('.title9');
+const text9= document.querySelector('.text9');
+// const link9= document.querySelector('.headlinehl4','.text4');
+const image9 = document.querySelector('.image0')
+const citation9 = document.querySelector('.citation9')
+const subtitle9 = document.querySelector('.subtitle9')
+// caption9= document.querySelectory('caption1')
 
 
 
@@ -115,7 +128,7 @@ const titleInsert = (blogs) => {
         <p class="headline hl1"><span class= "head">${title} </span class></p>
         `    
         text1.innerHTML += `
-        <p class="text1"><span class= "head"> ${article} </span class></p>
+        <p class="text1"><span class= "head"> ${article.substring(0,500)} </span class></p>
         `
         citation0.innerHTML += `
         <p class="citation"><span class= "head"> ${data.citation} </span class></p>
@@ -137,7 +150,7 @@ const titleInsert = (blogs) => {
         <p class="headline hl1"><span class= "head">${title} </span class></p>
         `    
         text2.innerHTML += `
-        <p class="text1"><span class= "head"> ${article} </span class></p>
+        <p class="text1"><span class= "head"> ${article.substring(0,500)} </span class></p>
         `
         citation2.innerHTML += `
         <p class="citation"><span class= "head"> ${data.citation} </span class></p>
@@ -161,7 +174,7 @@ const titleInsert = (blogs) => {
         <span class= "headline hl2">${title} </span class>
         `
         text3.innerHTML += `
-        <p class="">${article.substring(0, 750) } </p>
+        <p class="">${article.substring(0, 500) } </p>
         `
         citation3.innerHTML += `
         <p class="citation"><span class= "head"> ${data.citation} </span class></p>
@@ -180,7 +193,7 @@ const titleInsert = (blogs) => {
         <span class= "headline hl2">${title} </span class>
         `
         text4.innerHTML += `
-        <p class="">${article.substring(0, 750) } </p>
+        <p class="">${article.substring(0, 2000) } </p>
         `
         // citation4.innerHTML += `
         // <p class="citation"><span class= "head"> ${data.citation} </span class></p>
@@ -215,6 +228,11 @@ const titleInsert = (blogs) => {
         // <p class="image0"> <span.class= "head">${data.bannerImage}</span class></p>
         // `
 
+        text10.innerHTML += `
+        <p class="text1"><span class= "head"> ${article.substring(750,2000)} </span class></p>
+        `
+
+
     }
 
     else if  (position==="5"){
@@ -222,7 +240,7 @@ const titleInsert = (blogs) => {
         <p class="headline hl1"><span class= "head">${title} </span class></p>
         `    
         text6.innerHTML += `
-        <p class="text1"><span class= "head"> ${article} </span class></p>
+        <p class="text1"><span class= "head"> ${article.substring(1,250)} </span class></p>
         `
         citation6.innerHTML += `
         <p class="citation"><span class= "head"> ${data.citation} </span class></p>
@@ -233,6 +251,7 @@ const titleInsert = (blogs) => {
         // image5.innerHTML += `
         // <p class="image0"> <span.class= "head">${data.bannerImage}</span class></p>
         // `
+
 
     }
 
@@ -335,7 +354,7 @@ const titleInsert = (blogs) => {
         <p class="headline hl1"><span class= "head">${title} </span class></p>
         `    
         text6.innerHTML += `
-        <p class="text1"><span class= "head"> ${article} </span class></p>
+        <p class="text1"><span class= "head"> ${article.substring(0,500)} </span class></p>
         `
         citation6.innerHTML += `
         <p class="citation"><span class= "head"> ${data.citation} </span class></p>
@@ -346,6 +365,8 @@ const titleInsert = (blogs) => {
         // image7.innerHTML += `
         // <p class="image0"> <span.class= "head">${data.bannerImage}</span class></p>
         // `
+
+
 
         console.log(position);
         console.log(article);
@@ -360,7 +381,7 @@ const titleInsert = (blogs) => {
         <p class="headline8"><span class= "head">${title} </span class></p>
         `    
         text7.innerHTML += `
-        <p class="text8"><span class= "head"> ${article} </span class></p>
+        <p class="text1"><span class= "head"> ${article.substring(0,500)} </span class></p>
         `
         citation7.innerHTML += `
         <p class="citation"><span class= "head"> ${data.citation} </span class></p>
@@ -368,9 +389,15 @@ const titleInsert = (blogs) => {
         subtitle7.innerHTML += `
         <span class="headline hl2"> ${data.subtitle} </span> 
         `
+        text8.innerHTML += `
+        <p class="text1"> ${article.substring(500,2400)}</p>
+        `
+
+
         // image8.innerHTML += `
         // <p class="image0"> <span.class= "head">${data.bannerImage}</span class></p>
         // `
+
 
         console.log(position);
         console.log(article);
@@ -379,50 +406,50 @@ const titleInsert = (blogs) => {
      
 
 
-    // else if(position=== "15"){
+    else if(position=== "15"){
     
-    //     title1.innerHTML += `
-    //     <p class="headline hl1"><span class= "head">${title} </span class></p>
-    //     `    
-    //     text1.innerHTML += `
-    //     <p class="text1"><span class= "head"> ${article} </span class></p>
-    //     `
-    //     citation0.innerHTML += `
-    //     <p class="citation"><span class= "head"> ${data.citation} </span class></p>
-    //     `
-    //     subtitle0.innerHTML += `
-    //     <span class="headline hl2"> ${data.subtitle} </span> 
-    //     `
-    //     // image0.innerHTML += `
-    //     // <p class="image0"> <span.class= "head">${data.bannerImage}</span class></p>
-    //     // `
+        title9.innerHTML += `
+        <p class="headline hl1"><span class= "head">${title} </span class></p>
+        `    
+        text9.innerHTML += `
+        <p class="text1"><span class= "head"> ${article.substring(0,500)} </span class></p>
+        `
+        citation9.innerHTML += `
+        <p class="citation"><span class= "head"> ${data.citation} </span class></p>
+        `
+        subtitle9.innerHTML += `
+        <span class="headline hl2"> ${data.subtitle} </span> 
+        `
+        image9.innerHTML += `
+        <p class="image0"> <span.class= "head">${data.bannerImage}</span class></p>
+        `
 
-    //     console.log(position);
-    //     console.log(article);
-    //     console.log(bannerImage)
-    // }
+        console.log(position);
+        console.log(article);
+        console.log(bannerImage)
+    }
 
     // else if(position=== "16"){
     
-    //     title1.innerHTML += `
-    //     <p class="headline hl1"><span class= "head">${title} </span class></p>
-    //     `    
-    //     text1.innerHTML += `
-    //     <p class="text1"><span class= "head"> ${article} </span class></p>
-    //     `
-    //     citation0.innerHTML += `
-    //     <p class="citation"><span class= "head"> ${data.citation} </span class></p>
-    //     `
-    //     subtitle0.innerHTML += `
-    //     <span class="headline hl2"> ${data.subtitle} </span> 
-    //     `
-    //     // image0.innerHTML += `
-    //     // <p class="image0"> <span.class= "head">${data.bannerImage}</span class></p>
-    //     // `
+        // title1.innerHTML += `
+        // <p class="headline hl1"><span class= "head">${title} </span class></p>
+        // `    
+        // text8.innerHTML += `
+        // <p class="text1"><span class= "head"> ${article} </span class></p>
+        // `
+        // citation0.innerHTML += `
+        // <p class="citation"><span class= "head"> ${data.citation} </span class></p>
+        // `
+        // subtitle0.innerHTML += `
+        // <span class="headline hl2"> ${data.subtitle} </span> 
+        // `
+        // image0.innerHTML += `
+        // <p class="image0"> <span.class= "head">${data.bannerImage}</span class></p>
+        // `
 
-    //     console.log(position);
-    //     console.log(article);
-    //     console.log(bannerImage)
+        // console.log(position);
+        // console.log(article);
+        // console.log(bannerImage)
     // }
 
         // else if(position=== "17"){
