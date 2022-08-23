@@ -34,7 +34,7 @@ const subtitle3 = document.querySelector('.subtitle3')
 // This is the Fourth Headline (4)
 const title4= document.querySelector('.headlinehl4');
 const text4= document.querySelector('.text4');
-// const link = document.querySelector('.headlinehl4','.text4');
+const link4 = document.querySelector('.headlinehl4','.text4');
 // const image0 = document.querySelector('.image0')
 const citation4 = document.querySelector('.citation4')
 const subtitle4 = document.querySelector('.subtitle4')
@@ -78,7 +78,7 @@ const title9= document.querySelector('.title9');
 const text9= document.querySelector('.text9');
 // const link9= document.querySelector('.headlinehl4','.text4');
 const image9 = document.querySelector('.image0')
-const citation9 = document.querySelector('.citation9')
+// const citation9 = document.querySelector('.citation9')
 const subtitle9 = document.querySelector('.subtitle9')
 // caption9= document.querySelectory('caption1')
 
@@ -179,9 +179,9 @@ const titleInsert = (blogs) => {
         citation3.innerHTML += `
         <p class="citation"><span class= "head"> ${data.citation} </span class></p>
         `
-        subtitle3.innerHTML += `
-        <span class="headline hl2"> ${data.subtitle} </span> 
-        `
+        // subtitle3.innerHTML += `
+        // <span class="headline hl2"> ${data.subtitle} </span> 
+        // `
         // image0.innerHTML += `
         // <p class="image0"> <span.class= "head">${data.bannerImage}</span class></p>
         // `
@@ -193,7 +193,9 @@ const titleInsert = (blogs) => {
         <span class= "headline hl2">${title} </span class>
         `
         text4.innerHTML += `
-        <p class="">${article.substring(0, 2000) } </p>
+         <a href="${data.linkURL}">
+         <p class="">${article.substring(0, 2000) } </p>
+         </a>
         `
         // citation4.innerHTML += `
         // <p class="citation"><span class= "head"> ${data.citation} </span class></p>
@@ -213,10 +215,14 @@ const titleInsert = (blogs) => {
 
     else if  (position==="4"){
         title5.innerHTML += `
+        <a href="${data.linkURL}">
         <p class="headline hl1"><span class= "head">${title} </span class></p>
+        </a>
         `    
         text5.innerHTML += `
+        <a href="${data.linkURL}">
         <p class="text1"><span class= "head"> ${article.substring(0, 750)} </span class></p>
+        </a>
         `
         citation5.innerHTML += `
         <p class="citation"><span class= "head"> ${data.citation} </span class></p>
@@ -261,12 +267,14 @@ const titleInsert = (blogs) => {
       
         console.log(position, title);
                 smallArticleTitle1.innerHTML += `   
-                <a href="/${data.linkURL}">
+                <a href="${data.linkURL}">
                 <p> ${title} </p>
                 </a>
                 `
                 smallArticleText1.innerHTML += `
+                <p><a href="${data.linkURL}">
                 <p>${article.substring(0, 240)}</p>
+                </a></p>
                 `
                 console.log(position);
       
@@ -276,10 +284,14 @@ const titleInsert = (blogs) => {
       else if (position==="7"){
         console.log(position, title);
                 smallArticleTitle2.innerHTML += `
+                <a href="${data.linkURL}">
                 <p>${title}</p>
+                </a>
                 `
                 smallArticleText2.innerHTML += `
+                <a href="${data.linkURL}">
                 <p> ${article.substring(0, 240)}} </p>
+                </a>
                 `
                 console.log(position)
             }
@@ -288,10 +300,14 @@ const titleInsert = (blogs) => {
       
         console.log(position, title);
                 smallArticleTitle3.innerHTML += `
+                <a href="${data.linkURL}">
                 <p>${title} </p>
+                </a>
                 `
                 smallArticleText3.innerHTML += `
+                <a href="${data.linkURL}">
                 <p> ${article.substring(0, 240)}}</p>
+                </a>
                 `
                 console.log(position)
             }
@@ -302,10 +318,14 @@ const titleInsert = (blogs) => {
       
         console.log(position, title);
                 smallArticleTitle4.innerHTML += `
+                <a href="${data.linkURL}">
                 <p>${title} </p>
+                </a>
                 `
                 smallArticleText4.innerHTML += `
+                <a href=${data.linkURL}>
                 <p> ${article.substring(0, 240)}} </p>
+                </a>
                 `
                 console.log(position)
             }
@@ -315,10 +335,14 @@ const titleInsert = (blogs) => {
       
         console.log(position, title);
                 smallArticleTitle4.innerHTML += `
+                <a href=${data.linkURL}>
                 <p>${title}</p>
+                </a>
                 `
                 smallArticleText4.innerHTML += `
+                <a href=${data.linkURL}>
                 <p> ${article.substring(0, 240)} (click to continue reading) </p>
+                </a>
                 `
 
                 console.log(position)
@@ -328,10 +352,14 @@ const titleInsert = (blogs) => {
       
         console.log(position, title);
                 smallArticleTitle5.innerHTML += `
+                <a href=${data.linkURL}>
                 <p>${title}</p>
+                </a>
                 `
                 smallArticleText5.innerHTML += `
+                <a href=${data.linkURL}>
                 <p> ${article.substring(0,240)}</p>
+                </a>
                 `
                 console.log(position)
             }
@@ -340,10 +368,14 @@ const titleInsert = (blogs) => {
       
         console.log(position, title);
              smallArticleTitle6.innerHTML += `
+             <a href=${data.linkURL}
              <p>${title} </p>
+             </a>
              `
              smallArticleText6.innerHTML += `
+             <a href=${data.linkURL}
              <p> ${article.substring(0,240)} </p>
+             </a>
              `
              console.log(position)
     }   
@@ -378,7 +410,7 @@ const titleInsert = (blogs) => {
     else if(position=== "14"){
     
         title7.innerHTML += `
-        <p class="headline8"><span class= "head">${title} </span class></p>
+        <p class="headline hl2">${title}</p>
         `    
         text7.innerHTML += `
         <p class="text1"><span class= "head"> ${article.substring(0,500)} </span class></p>
@@ -414,9 +446,9 @@ const titleInsert = (blogs) => {
         text9.innerHTML += `
         <p class="text1"><span class= "head"> ${article.substring(0,500)} </span class></p>
         `
-        citation9.innerHTML += `
-        <p class="citation"><span class= "head"> ${data.citation} </span class></p>
-        `
+        // citation9.innerHTML += `
+        // <p class="citation"><span class= "head"> ${data.citation} </span class></p>
+        // `
         subtitle9.innerHTML += `
         <span class="headline hl2"> ${data.subtitle} </span> 
         `
